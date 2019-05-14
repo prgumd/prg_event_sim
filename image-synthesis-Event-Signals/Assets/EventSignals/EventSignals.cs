@@ -24,8 +24,8 @@ public class EventSignals : MonoBehaviour {
     public float diffThreshold = 0;
 
     void Start() {
-		eventShader = Shader.Find("Hidden/EventShader");
-		eventMaterial = new Material(eventShader);
+	eventShader = Shader.Find("Hidden/EventShader");
+	eventMaterial = new Material(eventShader);
         
         storeFrameShader = Shader.Find("Hidden/StoreFrameShader");
         storeFrameMaterial = new Material(storeFrameShader);
