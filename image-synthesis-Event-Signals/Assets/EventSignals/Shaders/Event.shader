@@ -48,13 +48,16 @@
 			{
                 float4 curFrame = tex2D(_MainTex, i.uv);
                 float4 pastFrame = tex2D(_PastFrame, i.uv);
-				float4 diff = abs(curFrame - pastFrame);
-				float avgDiff = (diff.r + diff.g + diff.b) / 3; 
+				
+				float redDiff = abs(curFrame.r - pastFrame.r);
+				float greenDiff = abs(curFrame.g - pastFrame.g);
+				float blueDiff = abs(curFrame.b - pastFrame.b);
+				float avgDiff = (redDiff + greenDiff + blueDiff) / 3; 
 				
 				float4 ret;
 
 				if (avgDiff > _DiffThreshold) {
-					ret = float4(1, 1, 1, 1);
+					ret = float4(redDiff, greenDiff, blueDiff, 1);
 				} else {
 					ret = float4(0, 0, 0, 0);
 				}
