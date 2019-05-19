@@ -3442,6 +3442,7 @@ GameObject:
   - component: {fileID: 716284899}
   - component: {fileID: 716284898}
   - component: {fileID: 716284903}
+  - component: {fileID: 716284904}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3544,6 +3545,19 @@ MonoBehaviour:
     type: 3}
   opticalFlowShader: {fileID: 4800000, guid: 2a970eca3c9e84f13b5b616e530a7919, type: 3}
   opticalFlowSensitivity: 100
+--- !u!114 &716284904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 716284897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed3c2eb6fcc26b4f8742485f310fa10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateInterval: 0.02
+  diffThreshold: 0
 --- !u!1 &785787369
 GameObject:
   m_ObjectHideFlags: 0

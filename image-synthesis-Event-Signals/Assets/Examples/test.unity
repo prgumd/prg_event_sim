@@ -1297,8 +1297,6 @@ GameObject:
   - component: {fileID: 762617993}
   - component: {fileID: 762617992}
   - component: {fileID: 762617997}
-  - component: {fileID: 762617998}
-  - component: {fileID: 762617999}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1337,10 +1335,10 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 17
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1349,7 +1347,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 200
-  field of view: 60
+  field of view: 70.43519
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1374,7 +1372,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 762617991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1.83, z: -14.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1388,38 +1386,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 762617991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7e9fcb795b84664bfc1ac40799a68f, type: 3}
+  m_Script: {fileID: 11500000, guid: f1bed5f649a06894182ad5a2ae106c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uberReplacementShader: {fileID: 0}
-  opticalFlowShader: {fileID: 0}
-  opticalFlowSensitivity: 100
---- !u!114 &762617998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 762617991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140767beae93b4b538dc8836dc753f8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 320
-  height: 200
---- !u!114 &762617999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 762617991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed3c2eb6fcc26b4f8742485f310fa10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 0.1
-  diffThreshold: 0
+  folder: FramesAndPose
+  frameRate: 1000
+  xDimPixelsToDistance: 1
+  yDimPixelsToDistance: 1
 --- !u!1 &808026207
 GameObject:
   m_ObjectHideFlags: 0

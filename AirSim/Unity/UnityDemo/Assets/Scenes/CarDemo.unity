@@ -4604,7 +4604,6 @@ GameObject:
   - component: {fileID: 716284899}
   - component: {fileID: 716284898}
   - component: {fileID: 716284903}
-  - component: {fileID: 716284904}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4649,10 +4648,10 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 17
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4661,7 +4660,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70.43519
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4700,26 +4699,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 716284897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7e9fcb795b84664bfc1ac40799a68f, type: 3}
+  m_Script: {fileID: 11500000, guid: f1bed5f649a06894182ad5a2ae106c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uberReplacementShader: {fileID: 4800000, guid: 171e6e515a12e4a298dce708924e98ba,
-    type: 3}
-  opticalFlowShader: {fileID: 4800000, guid: 2a970eca3c9e84f13b5b616e530a7919, type: 3}
-  opticalFlowSensitivity: 100
---- !u!114 &716284904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 716284897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed3c2eb6fcc26b4f8742485f310fa10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInterval: 0.02
-  diffThreshold: 0
+  folder: FramesAndPose
+  frameRate: 1000
+  xDimPixelsToDistance: 1
+  yDimPixelsToDistance: 1
 --- !u!1 &774197439
 GameObject:
   m_ObjectHideFlags: 0
