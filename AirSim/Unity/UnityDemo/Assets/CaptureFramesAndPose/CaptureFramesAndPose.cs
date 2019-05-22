@@ -15,6 +15,8 @@ public class CaptureFramesAndPose : MonoBehaviour {
     public int frameRate = 1000;
     public float xDimPixelsToDistance = 1;
     public float yDimPixelsToDistance = 1;
+    public enum OnSwitch {On, Off};
+    public OnSwitch dropDown = OnSwitch.On;
 
     private string folderPath;
     private Camera cam;
@@ -24,33 +26,36 @@ public class CaptureFramesAndPose : MonoBehaviour {
 
     void Start()
     {
-        // Set the playback framerate (real time will not relate to game time after this).
-        Time.captureFramerate = frameRate;
+        if (dropDown == OnSwitch.On) {
+            
+            // Set the playback framerate (real time will not relate to game time after this).
+            Time.captureFramerate = frameRate;
 
-        // Create the folder
-        System.IO.Directory.CreateDirectory(folder);
-        // Create the subfolder containing the exr files 
-        System.IO.Directory.CreateDirectory(folder + "/Frames");
+            // Create the folder
+            System.IO.Directory.CreateDirectory(folder);
+            // Create the subfolder containing the exr files 
+            System.IO.Directory.CreateDirectory(folder + "/Frames");
 
-        // Application.dataPath contains the path to Assets
-        folderPath = Application.dataPath + "/../" + folder; 
+            // Application.dataPath contains the path to Assets
+            folderPath = Application.dataPath + "/../" + folder; 
 
 
-        cam = GetComponent<Camera>();
-        cam.usePhysicalProperties = true;
-        
-        // For writing intrinsic matrix
-        matrixWriter = new StreamWriter(folderPath + "/k-matrix.txt", false);
-        writeIntrinsicMatrix();
-        matrixWriter.Close();
+            cam = GetComponent<Camera>();
+            cam.usePhysicalProperties = true;
+            
+            // For writing intrinsic matrix
+            matrixWriter = new StreamWriter(folderPath + "/k-matrix.txt", false);
+            writeIntrinsicMatrix();
+            matrixWriter.Close();
 
-        // The following streams are closed on application quit
-        // ----------------------------------------------------
-        // For writing pose for each frame
-        poseWriter = new StreamWriter(folderPath + "/pose.txt", false);
+            // The following streams are closed on application quit
+            // ----------------------------------------------------
+            // For writing pose for each frame
+            poseWriter = new StreamWriter(folderPath + "/pose.txt", false);
 
-        // For writing time to file map for frame
-        timeToFileWriter = new StreamWriter(folderPath + "/time-to-file-map.txt", false);
+            // For writing time to file map for frame
+            timeToFileWriter = new StreamWriter(folderPath + "/time-to-file-map.txt", false);
+        }
     }
 
     public void writeIntrinsicMatrix() {
@@ -80,7 +85,9 @@ public class CaptureFramesAndPose : MonoBehaviour {
 
     public void LateUpdate()
     {
-        StartCoroutine(RecordFrame());
+        if (dropDown == OnSwitch.On) {
+            StartCoroutine(RecordFrame());
+        }
     }
 
     private void writeExrFile() {
@@ -114,8 +121,10 @@ public class CaptureFramesAndPose : MonoBehaviour {
 
     void OnApplicationQuit()
     {
-        poseWriter.Close();
-        timeToFileWriter.Close();
+        if (dropDown == OnSwitch.On) {
+            poseWriter.Close();
+            timeToFileWriter.Close();
+        }
     }
 
 }

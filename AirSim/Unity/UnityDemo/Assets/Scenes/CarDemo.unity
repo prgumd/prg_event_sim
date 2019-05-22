@@ -4651,7 +4651,7 @@ Camera:
   m_projectionMatrixMode: 2
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 17
+  m_FocalLength: 11.387575
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4660,7 +4660,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70.43519
+  field of view: 93
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4706,6 +4706,7 @@ MonoBehaviour:
   frameRate: 1000
   xDimPixelsToDistance: 1
   yDimPixelsToDistance: 1
+  dropDown: 0
 --- !u!1 &774197439
 GameObject:
   m_ObjectHideFlags: 0
