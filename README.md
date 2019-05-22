@@ -7,3 +7,5 @@ More specificially, AirSim provides an example car and drone scene for Unity. Th
 For AirSim build and usage instructions, follow [here](https://github.com/microsoft/AirSim/tree/master/Unity).
 
 For ImageSynthesis implementation and usage instructions, follow [here](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis/src/master/)
+
+Note: There are very large files containing pose and frame data. The repository should be cloned using [Git LFS](https://git-lfs.github.com/)
