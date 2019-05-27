@@ -133,7 +133,8 @@ public class CaptureFramesAndPose : MonoBehaviour {
     }
 
     private void writeTimeToFileMap() {
-        string line = string.Format("{0:D04} {1:D04}.exr", Time.frameCount, Time.frameCount);
+        float secondsPassed = (float)Time.frameCount / 1000;
+        string line = string.Format("{0} {1:D04}.exr", secondsPassed, Time.frameCount);
         timeToFileWriter.WriteLine(line);
     }
 
