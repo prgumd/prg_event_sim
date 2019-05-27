@@ -16,18 +16,25 @@ public class CaptureFramesAndPose : MonoBehaviour {
     public float xDimPixelsToDistance = 1;
     public float yDimPixelsToDistance = 1;
     public enum OnSwitch {On, Off};
-    public OnSwitch dropDown = OnSwitch.On;
+    public OnSwitch captureOn = OnSwitch.On;
 
     private string folderPath;
     private Camera cam;
+    private int width;
+    private int height;
     private StreamWriter matrixWriter;
     private StreamWriter poseWriter;
     private StreamWriter timeToFileWriter;
 
     void Start()
     {
-        if (dropDown == OnSwitch.On) {
-            
+        if (captureOn == OnSwitch.On) {
+            cam = GetComponent<Camera>();
+            cam.usePhysicalProperties = true;
+
+            width = cam.pixelWidth;
+            height = cam.pixelHeight;
+
             // Set the playback framerate (real time will not relate to game time after this).
             Time.captureFramerate = frameRate;
 
@@ -39,10 +46,6 @@ public class CaptureFramesAndPose : MonoBehaviour {
             // Application.dataPath contains the path to Assets
             folderPath = Application.dataPath + "/../" + folder; 
 
-
-            cam = GetComponent<Camera>();
-            cam.usePhysicalProperties = true;
-            
             // For writing intrinsic matrix
             matrixWriter = new StreamWriter(folderPath + "/k-matrix.txt", false);
             writeIntrinsicMatrix();
@@ -63,14 +66,29 @@ public class CaptureFramesAndPose : MonoBehaviour {
         float xFocalLengthInPixels = xDimPixelsToDistance * focalLength;
         float yFocalLengthInPixels = yDimPixelsToDistance * focalLength;
 
-        Vector2 lensShift = cam.lensShift;
+        Vector2 lensShift = cam.lensShift; // should be in center of screen
+        float centerX = (width/2) + lensShift[0];
+        float centerY = (height/2) + lensShift[1];
 
         // Assuming skew coefficient is 0
         int skewCoefficient = 0;
 
-        matrixWriter.WriteLine(xFocalLengthInPixels + " " + skewCoefficient + " " + lensShift[0]);
-        matrixWriter.WriteLine(0 + " " + yFocalLengthInPixels + " " + lensShift[1]);
+        matrixWriter.WriteLine(xFocalLengthInPixels + " " + skewCoefficient + " " + centerX);
+        matrixWriter.WriteLine(0 + " " + yFocalLengthInPixels + " " + centerY);
         matrixWriter.WriteLine(0 + " " + 0 + " " + 1);
+        matrixWriter.WriteLine("");
+
+        // Writing projection matrix for testing purposes
+        Matrix4x4 projectionMatrix = cam.projectionMatrix;
+        string[] rows = new string[4];
+        for (int i=0; i<4; i++) {
+            for (int j=0; j<4; j++) {
+                rows[i] += projectionMatrix[i, j].ToString("F") + " ";
+            }
+        }
+        for (int i=0; i<rows.Length; i++) {
+            matrixWriter.WriteLine(rows[i]);
+        }
     }
 
     IEnumerator RecordFrame()
@@ -85,7 +103,7 @@ public class CaptureFramesAndPose : MonoBehaviour {
 
     public void LateUpdate()
     {
-        if (dropDown == OnSwitch.On) {
+        if (captureOn == OnSwitch.On) {
             StartCoroutine(RecordFrame());
         }
     }
@@ -94,7 +112,7 @@ public class CaptureFramesAndPose : MonoBehaviour {
         var texture = ScreenCapture.CaptureScreenshotAsTexture();
         
         // Need to convert the texture from the screenshot into the format needed for EncodeToEXR()
-        Texture2D newTexture = new Texture2D(texture.width, texture.height, TextureFormat.RGBAFloat, false);
+        Texture2D newTexture = new Texture2D(width, height, TextureFormat.RGBAFloat, false);
         newTexture.SetPixels(texture.GetPixels());
         newTexture.Apply();
 
@@ -121,7 +139,7 @@ public class CaptureFramesAndPose : MonoBehaviour {
 
     void OnApplicationQuit()
     {
-        if (dropDown == OnSwitch.On) {
+        if (captureOn == OnSwitch.On) {
             poseWriter.Close();
             timeToFileWriter.Close();
         }
