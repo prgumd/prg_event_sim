@@ -29,6 +29,3 @@ For AirSim build and usage instructions, follow [here](https://github.com/micros
 
 ### [prg_event_sim/image-synthesis-Event-Signals/](https://github.com/prgumd/prg_event_sim/tree/master/image-synthesis-Event-Signals)
 For ImageSynthesis implementation and usage instructions, follow [here](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis/src/master/)
-
-## Note 
-There are very large files containing pose and frame data. The repository should be cloned using [Git LFS](https://git-lfs.github.com/)
