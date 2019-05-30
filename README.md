@@ -12,6 +12,10 @@ The goal is to record every frame of a driving scene in Unity. CaptureFramesAndP
   * [prg_event_sim/AirSim/Unity/UnityDemo/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs](/AirSim/Unity/UnityDemo/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs)
   * [prg_event_sim/image-synthesis-Event-Signals/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs](/image-synthesis-Event-Signals/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs)
   
+### Calculation of the intrinsic matrix
+ * Unity provides the focal length and sensor size of a camera in terms of milimeters. The focal length in terms of pixels was obtained from the following equation:
+   * focal_pixel = (focal_mm / sensor_width_mm) * image_width_in_pixels
+
 ### The intrinsic matrix obtained from Unity was validated using Matlab's [Single Camera Calibrator App](https://www.mathworks.com/help/vision/ug/single-camera-calibrator-app.html)
   * Matlab's app requires images which feature a certain checkerboard pattern. The size of each square must also be known.
   * Such images where obtained in a [Unity scene made for calibration](/calibration%20scene)
