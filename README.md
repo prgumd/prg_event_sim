@@ -22,6 +22,11 @@ The goal is to record every frame of a driving scene in Unity. CaptureFramesAndP
     * [Folder containing the images](/calibration%20scene/CalibrationImages)
     * A 7x10 checkerboard pattern was placed as a texture on a 3.5x5 meter cube in Unity. 
       * Thus, the size of each square is .5 meters.
+  * App Parameters (same as default):
+    * Standard Camera Model
+    * 2 Coefficients for Radial Distortion
+    * Skew and Tangential Distortion not computed
+    * No OptimizationOptions specified.
 
 ## Sample scenes
 ### [prg_event_sim/AirSim/Unity/UnityDemo/](https://github.com/prgumd/prg_event_sim/tree/master/AirSim/Unity/UnityDemo)
