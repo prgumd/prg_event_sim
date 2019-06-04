@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent (typeof(Camera))]
 public class ScreenShotter : MonoBehaviour {
 
+	public string folderName = "folderName";
+
 	private Camera cam;
 	private int width;
 	private int height;
@@ -23,7 +25,7 @@ public class ScreenShotter : MonoBehaviour {
 			height = cam.pixelHeight;
 
 			// Create the folder
-			System.IO.Directory.CreateDirectory("Calibration");
+			System.IO.Directory.CreateDirectory(folderName);
     }
 
 		void OnGUI ()
@@ -44,7 +46,7 @@ public class ScreenShotter : MonoBehaviour {
 				cam.targetTexture = null;
 				RenderTexture.active = null;
 
-				System.IO.File.WriteAllBytes(Application.dataPath + "/../Calibration/" + (imageCounter++) + ".png", screenshot.EncodeToPNG());
+				System.IO.File.WriteAllBytes(Application.dataPath + "/../" + folderName + "/" + (imageCounter++) + ".png", screenshot.EncodeToPNG());
 			}
 	}
 }

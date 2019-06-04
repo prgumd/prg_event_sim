@@ -1,0 +1,29 @@
+cameraParams = 
+
+  cameraParameters with properties:
+
+   Camera Intrinsics
+                    IntrinsicMatrix: [3×3 double]
+                        FocalLength: [441.7853 441.7723]
+                     PrincipalPoint: [468.0927 187.6046]
+                               Skew: 0
+                   RadialDistortion: [5.6895e-04 -4.0295e-04]
+               TangentialDistortion: [0 0]
+                          ImageSize: [375 936]
+
+   Camera Extrinsics
+                   RotationMatrices: [3×3×37 double]
+                 TranslationVectors: [37×3 double]
+
+   Accuracy of Estimation
+              MeanReprojectionError: 0.0834
+                 ReprojectionErrors: [54×2×37 double]
+                  ReprojectedPoints: [54×2×37 double]
+
+   Calibration Settings
+                        NumPatterns: 37
+                        WorldPoints: [54×2 double]
+                         WorldUnits: 'millimeters'
+                       EstimateSkew: 0
+    NumRadialDistortionCoefficients: 2
+       EstimateTangentialDistortion: 0

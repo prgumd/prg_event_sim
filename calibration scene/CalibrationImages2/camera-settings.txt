@@ -1,0 +1,3 @@
+Focal Length: 4
+Sensor Size: X=10, Y=7
+Lens Shift: X=0, Y=0
