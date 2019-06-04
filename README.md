@@ -19,7 +19,10 @@ The goal is to record every frame of a driving scene in Unity. CaptureFramesAndP
 ### The intrinsic matrix obtained from Unity was validated using Matlab's [Single Camera Calibrator App](https://www.mathworks.com/help/vision/ug/single-camera-calibrator-app.html)
   * Matlab's app requires images which feature a certain checkerboard pattern. The size of each square must also be known.
   * Such images where obtained in a [Unity scene made for calibration](/calibration%20scene)
-    * [Folder containing the images](/calibration%20scene/CalibrationImages)
+    * Two sets of images were obtained, where each set had different camera settings.
+      * [First Folder](/calibration%20scene/CalibrationImages1)
+      * [Second Folder](/calibration%20scene/CalibrationImages2)
+      * Each folder contains the images, the camera settings, Matlab's estimation, and the intrinsic matrix from Unity.
     * A 7x10 checkerboard pattern was placed as a texture on a 3.5x5 meter cube in Unity. 
       * Thus, the size of each square is .5 meters.
   * App Parameters (same as default):
