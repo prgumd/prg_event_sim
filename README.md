@@ -9,7 +9,6 @@ The goal is to record every frame of a driving scene in Unity. CaptureFramesAndP
   * 'Frame Rate' specifies how many frames per second are to be recorded
 
 ### CaptureFramesAndPose.cs is located in the Assets folder of the sample scenes
-  * [prg_event_sim/AirSim/Unity/UnityDemo/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs](/AirSim/Unity/UnityDemo/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs)
   * [prg_event_sim/image-synthesis-Event-Signals/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs](/image-synthesis-Event-Signals/Assets/CaptureFramesAndPose/CaptureFramesAndPose.cs)
   
 ### Calculation of the intrinsic matrix
