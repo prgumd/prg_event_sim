@@ -31,12 +31,14 @@ The goal is to record every frame of a driving scene in Unity. CaptureFramesAndP
     * No OptimizationOptions specified.
 
 ## Sample scenes
-### [prg_event_sim/AirSim/Unity/UnityDemo/](https://github.com/prgumd/prg_event_sim/tree/master/AirSim/Unity/UnityDemo)
-Microsoft's [AirSim](https://github.com/microsoft/AirSim) with Unity's [ML-ImageSynthesis](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis/src/master/) component. 
+### [https://github.com/microsoft/AirSim](https://github.com/microsoft/AirSim/)
 
-More specificially, AirSim provides an example car and drone scene for Unity. This example scene was modified to have an ImageSynthesis component integrated into it.
+AirSim provides an example car and drone scene for Unity.
 
-For AirSim build and usage instructions, follow [here](https://github.com/microsoft/AirSim/tree/master/Unity).
+It is a submodule of this repo. Go to **Cloning a Project with Submodules** in this tutorial [here](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to get the actual contents of the AirSim directory after cloning the prg_event_sim repository
+
+Build and usage instructions for the Unity Demo can be found [here](https://github.com/microsoft/AirSim/tree/master/Unity)
+
 
 ### [prg_event_sim/image-synthesis-Event-Signals/](https://github.com/prgumd/prg_event_sim/tree/master/image-synthesis-Event-Signals)
 For ImageSynthesis implementation and usage instructions, follow [here](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis/src/master/)
