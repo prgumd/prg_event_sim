@@ -7,3 +7,5 @@ A Unity component for Camera objects which calculates the log value of absolute 
 Found in Assets/EventSignals
 
 Note that this component is not integral to the project as a whole, as [DAVIS simulator](https://github.com/uzh-rpg/rpg_davis_simulator) can be used to obtain a simulated DVS dataset
+
+![Alt Text](https://media.giphy.com/media/J14JURlOBcTcQs51pp/giphy.gif)
