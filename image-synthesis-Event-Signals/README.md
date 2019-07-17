@@ -2,7 +2,7 @@
 Original repository for ML-ImageSynthesis can be found [here](https://bitbucket.org/Unity-Technologies/ml-imagesynthesis/src/master/)
 
 ## Event Signals
-A Unity component for Camera objects. Only those pixels whose absolute difference between frames pass a threshold are shown, thus simulating data that could be generated from a Dynamic Vision Sensor (DVS).  
+A Unity component for Camera objects. Only those pixels whose absolute difference between frames pass a threshold are shown, thus simulating data that could be generated from a Dynamic Vision Sensor (DVS) (albeit some more complicated and required math is currently missing).  
 
 Found in Assets/EventSignals
 
