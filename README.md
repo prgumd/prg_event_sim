@@ -1,4 +1,4 @@
-# prg_event_sim
+# prg_event_sim [In-Progress]
 
 ## Step 1: Gathering Data
 The goal is to record every frame of a driving scene in Unity. CaptureFramesAndPose.cs is a Unity camera component that completes this task. For each frame, the time and pose of the camera is recorded. The intrinsic matrix is also recorded.  
