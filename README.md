@@ -1,4 +1,4 @@
-# prg_event_sim [In-Progress]
+# prg_event_sim 
 
 ## Step 1: Gathering Data
 The goal is to record every frame of a driving scene in Unity. CaptureFramesAndPose.cs is a Unity camera component that completes this task. For each frame, the time and pose of the camera is recorded. The intrinsic matrix is also recorded. Event-data is either simulated concurrently using the Unity component [Event Signals](/image-synthesis-Event-Signals/) or is simulated after frame collection using [rpg_davis_simulator](https://github.com/uzh-rpg/rpg_davis_simulator)
